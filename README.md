@@ -1,8 +1,6 @@
 # currency swap  
 it is a project that support currency swap  
 
-![alt text](https://i.imgur.com/E8Qlh9h.png)
-
 you will set the currenct you want to change and the amount  
 and click in cal butten to see the result  
 and you can by click **Auti** butten see all you transaction history  
