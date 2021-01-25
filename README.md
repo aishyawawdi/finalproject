@@ -1,38 +1,60 @@
-# currency swap  
-it is a project that support currency swap  
+# Final project 
+currency changer are common features in AI applications.
+In the following assignment we are implemented a web server that handles
+calculation of currency change. For example, given an amount in one currency we would like to calculate that amount in 
+another currency etc
+you can by click **Auti** butten see all the change history 
 
-you will set the currenct you want to change and the amount  
-and click in cal butten to see the result  
-and you can by click **Auti** butten see all you transaction history  
+## Common setup
+Clone the repo and install the dependencies.
+```bash
+git clone https://github.com/mohamaddiwany/finalproject.git
+```
 
-# how to run in terraform:  
-git clone https://github.com/mohamedgalia/currency_swap.git  
-cd currency_swap  
+## Usage - By Flask
+
+open Command Prompt and go to the file location then tap 
+```bash
+py -m pip install -r requirements.txt
+set FLASK_APP=main.py
+flask run
+```
+Go over the [localhost](https://127.0.0.0:5000) with port 5000 because flask run with that port
+
+## Usage - By Docker
+
+open Command Prompt and go to the file location then tap
+```bash
+docker build -t frontend .
+```
+that's will build the docker image for you then tap
+notice: a docker demon must be running before building the image
+```bash
+docker run -d -p 5000:5000 frontend
+```
+Go over the [localhost](https://127.0.0.0:5000)
+
+## Usage - By Terraform:  
+git clone https://github.com/mohamaddiwany/finalproject.git  
+cd finalproject  
 go to main.tf file  
-change the key name in line 179 "key_name = "gazal"" to your Keypair name in your aws  
-add your privte key file to the folder and set it in line 239 (./gazal.pem)  
-set your access_key and secret_key of aws in variables.tf file in access_key_var and secret_key_var  
-terraform init  
-terraform apply
+change the key name your Keypair name in your aws   
+add your privte key file to the folder (something which end with .pem)
+set your access_key and secret_key of aws instead of #####
+then work like we used to work on terraform
 
-if you want to remove every thing that build run:  
+terraform init - to start the work 
+terraform apply - to make it run 
+
+not to forget then to destroy the terraform:  
 terraform destroy
   
-**go to your aws console and get your instance public ip**  
-**and you will find the app in "your-instance-ip:8000"**  
+then go to your aws console and get your instance public ip run through "your-instance-ip:5002"  
 
 # how to run in k8s:  
-git clone https://github.com/mohamedgalia/currency_swap.git  
-cd currency_swap/k8s  
-kubectl apply -f backend-dy.yml -f backend-sr.yml -f frontend-dy.yml -f frontend-sr.yml -f auti-dy.yml -f auti-sr.yml  
+git clone https://github.com/mohamaddiwany/finalproject.git  
+cd finalproject
+cd k8s  
+kubectl apply -f backend.yml -f frontend-.yml -f auti.yml  
 
-**you will find the app in "127.0.0.1:30037"**  
-
-# using:  
-python  
-flask  
-docker  
-docker compose  
-aws  
-k8s  
-html  
+open your browser and go to [localhost](https://127.0.0.0:31495) "127.0.0.1:31495"  
