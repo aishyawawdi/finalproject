@@ -34,9 +34,21 @@ docker run -d -p 5000:5000 frontend
 ```
 Go over the [localhost](https://127.0.0.0:5000)
 
+## Usage - kubernetes:  
+```bash
+git clone https://github.com/mohamaddiwany/finalproject.git
+cd finalproject
+cd k8s  
+kubectl apply -f backend.yml -f frontend-.yml -f auti.yml  
+```
+
+open your browser and go to [localhost](https://127.0.0.0:31495) "127.0.0.1:31495"  
+
 ## Usage - By Terraform:  
+```bash
 git clone https://github.com/mohamaddiwany/finalproject.git  
 cd finalproject  
+```
 go to main.tf file  
 change the key name your Keypair name in your aws   
 add your privte key file to the folder (something which end with .pem)
@@ -51,10 +63,4 @@ terraform destroy
   
 then go to your aws console and get your instance public ip run through "your-instance-ip:5002"  
 
-# how to run in k8s:  
-git clone https://github.com/mohamaddiwany/finalproject.git  
-cd finalproject
-cd k8s  
-kubectl apply -f backend.yml -f frontend-.yml -f auti.yml  
 
-open your browser and go to [localhost](https://127.0.0.0:31495) "127.0.0.1:31495"  
